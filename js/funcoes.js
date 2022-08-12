@@ -38,3 +38,20 @@ function abreModalLogin(){
     cortinaLogin.style.display = 'block';
     modalLogin.style.display = 'block';
 }
+
+function abreModalCurso(){
+    let = cortinaCurso = document.querySelector('#cortina-curso');
+    let = modalCurso = document.querySelector('#modal-curso');
+
+    cortinaCurso.style.display = 'block';
+    modalCurso = style.dispaly = 'block';
+}
+
+function fechaModalCurso(){
+    let = cortinaCurso = document.querySelector('#cortina-curso');
+    let = modalCurso = document.querySelector('#modal-curso');
+
+    cortinaCurso.style.display = 'none';
+    modalCurso = style.dispaly = 'none';
+}
+
