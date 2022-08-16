@@ -4,5 +4,6 @@ class Curso{
     public $id;
     public $nome;
     public $info;
-    public $img;
+    public $novoCurso;
+    public $idUsuario;
 }

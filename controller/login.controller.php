@@ -16,10 +16,10 @@ isset($_POST['senha'])){
         $usuarioRepository = new UsuarioRepository();
         $usuarioLogado = $usuarioRepository->recuperaUsuario($user);
 
-        if($usuarioLogado){
-            header('location: ../view/home.html');
+        if($usuarioLogado == null){
+            header('location:./index.html');
         }else{
-            header('location:../index.html');
+            header('location:../view/home.php');
         }
        
 

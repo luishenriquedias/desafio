@@ -22,7 +22,7 @@ isset($_POST['senha'])){
     $resultado = $usuarioRepository->criaUsuario($user);
 
     if($resultado){
-        header('location:../view/home.html');
+        header('location:../view/home.php');
     }else{
         echo "tudo errado";
     }

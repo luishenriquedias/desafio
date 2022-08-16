@@ -3,21 +3,37 @@
 require_once '../data/conexao.data.php';
 require_once '../model/curso.class.php';
 
-class UsuarioRepository{
+class CursoRepository{
     private $conexao;
 
     public function __construct(){
         $this->conexao = Conexao::getInstancia();
     }
     
-    public function criaCurso($curso){
+    public function recuperaCurso(){
         $operacao = $this->conexao->prepare(
-            'INSERT INTO curso(nome, info, img) Values(?, ?, ?)'
+            'SELECT curso.nome, curso.info, curso.id, usuario.usuaria FROM usuario INNER JOIN curso ON curso.idUsuario = usuario.idusuario'
         );
 
-        $operacao->bindValue(1, $curso->nome);
-        $operacao->bindValue(2, $curso->info);
-        $operacao->bindValue(3, $curso->img);
+        
+        $resultado = $operacao->execute();
+
+        if($resultado){
+            $cursos = $operacao->fetchAll(PDO::FETCH_CLASS, 'Curso'  );
+            return $cursos;
+        }else{
+            return [];
+        }
+    }
+
+    public function criaCurso($nome, $info, $idUsuario){
+        $operacao = $this->conexao->prepare(
+            'INSERT INTO curso (nome, info, idUsuario) VALUES (?, ?, ?)'
+        );
+
+        $operacao->bindValue(1, $nome);
+        $operacao->bindValue(2, $info);
+        $operacao->bindValue(3, $idUsuario);
 
         return $operacao->execute();
     }
