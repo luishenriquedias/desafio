@@ -93,7 +93,7 @@
     <div id="cortina-curso">
       <div id="modal-curso">
         <button onclick="fechaModalCurso()" id="botao-fechar-curso">X</button>
-        <form id="form-curso" action="../controller/criandocurso.controller.php" method="post">
+        <form id="form-curso" action="../controller/criacurso.controller.php" method="post">
           <div id="arquivo-curso">
             <label id="label-curso" for="">escolha uma imagem</label>
             <input type="file" name="escolha-img" id="escolha-img">

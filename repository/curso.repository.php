@@ -26,15 +26,4 @@ class CursoRepository{
         }
     }
 
-    public function criaCurso($nome, $info, $idUsuario){
-        $operacao = $this->conexao->prepare(
-            'INSERT INTO curso (nome, info, idUsuario) VALUES (?, ?, ?)'
-        );
-
-        $operacao->bindValue(1, $nome);
-        $operacao->bindValue(2, $info);
-        $operacao->bindValue(3, $idUsuario);
-
-        return $operacao->execute();
-    }
 }
