@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 if(isset($_POST['usuario']) &&
 isset($_POST['senha'])){
@@ -24,6 +25,7 @@ isset($_POST['senha'])){
             header('location:../view/home.php');
         }
        
+
 
 }else{
     header('location./index.html');

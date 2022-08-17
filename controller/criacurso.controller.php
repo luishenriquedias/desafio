@@ -9,6 +9,7 @@
     $resultado = $cursoRepository->recuperaCurso();
 
     if($resultado){
+
         header('location../view/home.php');
     }else{
 

@@ -40,7 +40,7 @@ class CursoRepository{
 
         $operacao->bindValue(':nome', $nome);
         $operacao->bindValue(':info', $info);
-        $operacao->bindValue('idUsuario', $idUsuario);
+        $operacao->bindValue(':idUsuario', $idUsuario);
 
         return $operacao->execute();
     }
