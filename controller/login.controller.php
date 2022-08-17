@@ -19,6 +19,8 @@ isset($_POST['senha'])){
         if($usuarioLogado == null){
             header('location:./index.html');
         }else{
+            $_SESSION['idUsuario'] = $usuarioLogado->idusuario;
+            $_SESSION['logado'] = true;
             header('location:../view/home.php');
         }
        

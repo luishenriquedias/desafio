@@ -1,3 +1,13 @@
+<?php 
+//var_dump($_SESSION);
+  if(!isset($_SESSION['logado'])){
+    var_dump($_SESSION);
+    //header('location:/desafio-leo');
+    //exit;
+  }
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
